@@ -1,0 +1,38 @@
+/* RTL Layout Support for Arabic */
+
+[dir="rtl"] body {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-col h4::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .btn i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Typically grid layouts handle dir="rtl" perfectly fine out of the box */
+
+@media (max-width: 900px) {
+  [dir="rtl"] .nav-links {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .nav-links a {
+    padding-right: 5%;
+  }
+}
+
+/* Services Cards & Icons */
+[dir="rtl"] .service-card .icon {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+/* Form layout adjustment if needed */
+[dir="rtl"] input, [dir="rtl"] textarea {
+  text-align: right;
+}

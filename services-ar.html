@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" id="htmlEl" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خدماتنا | بوس إكسبيرت التقنية</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .page-header { padding: 160px 0 80px; text-align: center; background: var(--bg-gray); }
+    .page-header h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--primary-blue); }
+    .services-full-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    
+    .scard {
+      padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: flex-start;
+      background: #fff; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #eee;
+      border-top: 3px solid transparent; transition: all 0.4s ease;
+    }
+    .scard:hover { border-top: 3px solid var(--primary-blue); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(47, 93, 154, 0.1); }
+    .scard:nth-child(even):hover { border-top: 3px solid var(--primary-red); box-shadow: 0 15px 35px rgba(211, 47, 69, 0.1); }
+    
+    .scard i { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 25px; transition: transform 0.3s ease; }
+    .scard:nth-child(even) i { color: var(--primary-red); }
+    .scard:hover i { transform: scale(1.1); }
+    
+    .scard h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-dark); }
+    .scard p { color: var(--text-muted); margin-bottom: 25px; flex-grow: 1; }
+    
+    .scard-btn {
+      color: var(--primary-blue); font-weight: 600; font-family: var(--font-main); font-size: 0.95rem;
+      display: inline-flex; align-items: center; gap: 8px; text-transform: uppercase;
+      padding: 10px 20px; border: 1px solid var(--primary-blue); border-radius: 4px; transition: all 0.3s;
+    }
+    .scard:nth-child(even) .scard-btn { color: var(--primary-red); border-color: var(--primary-red); }
+    .scard-btn:hover { background: var(--primary-blue); color: #fff; }
+    .scard:nth-child(even) .scard-btn:hover { background: var(--primary-red); color: #fff; }
+    
+    [dir="rtl"] .scard { align-items: flex-start; } /* Overriding in correct RTL direction */
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="index-ar.html" class="logo"><img src="assets/images/posexpert.png" alt="بوس إكسبيرت التقنية" style="height: 45px; width: auto;"></a>
+      <nav class="nav-links">
+        <a href="index-ar.html" class="nav-item">الرئيسية</a>
+        <a href="about-ar.html" class="nav-item">من نحن</a>
+        <a href="services-ar.html" class="nav-item active">خدماتنا</a>
+        <a href="portfolio-ar.html" class="nav-item">أعمالنا</a>
+        <a href="contact-ar.html" class="nav-item">اتصل بنا</a>
+        <button id="langToggle" class="lang-toggle"><i class="fas fa-globe"></i> <span id="langText">English</span></button>
+      </nav>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="animate-fade-in-up">جميع <span class="text-red">خدماتنا</span></h1>
+      <p class="animate-fade-in-up stagger-1 text-muted">تحول رقمي شامل وحلول تقنية متكاملة</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="services-full-grid">
+        
+        <div class="scard animate-on-scroll stagger-1">
+          <i class="fas fa-network-wired"></i>
+          <h3>تطبيق أنظمة ERP</h3>
+          <p>نشر أنظمة Odoo و ERPNext مخصصة لتتناسب مباشرة مع سير عملك المتأتمت.</p>
+          <a href="contact-ar.html" class="scard-btn">طلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-2">
+          <i class="fas fa-cash-register"></i>
+          <h3>تركيب أنظمة نقاط البيع POS</h3>
+          <p>إعداد الأجهزة والبرامح المتعلقة بها وهندسة وتصميم قوائم الأسعار بشكل احترافي للمطاعم ومحلات التجزئة.</p>
+          <a href="contact-ar.html" class="scard-btn">طلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-3">
+          <i class="fas fa-boxes"></i>
+          <h3>إدارة المخزون</h3>
+          <p>أدوات تتبع دقيقة، وإعادة الطلب التلقائي، ومزامنة بين المستودعات لمنع نفاد المخزون.</p>
+          <a href="contact-ar.html" class="scard-btn">طلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-1">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <h3>فواتير هيئة الزكاة (ZATCA)</h3>
+          <p>تفعيل مباشر للفواتير الإلكترونية المرحلة الثانية مطابق تماماً مع متطلبات الهيئة.</p>
+          <a href="contact-ar.html" class="scard-btn">طلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-2">
+          <i class="fas fa-laptop-code"></i>
+          <h3>تطوير الأنظمة والمواقع الإلكترونية</h3>
+          <p>مواقع شركات عالية الأداء ومتاجر إلكترونية احترافية مخصصة لرفع المبيعات.</p>
+          <a href="contact-ar.html" class="scard-btn">طلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-3">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>تطبيقات الجوال</h3>
+          <p>تطبيقات للAndroid و الiOS مصممة بعناية لخدمة عملياتك الداخلية والخارجية بكل سهولة.</p>
+          <a href="contact-ar.html" class="scard-btn">طلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-1">
+          <i class="fas fa-server"></i>
+          <h3>البنية التحتية لتقنية المعلومات</h3>
+          <p>إعداد كامل وموثوق لبيئة العمل من خوادم (Servers)، شبكات، وأجهزة الكمبيوتر للموظفين.</p>
+          <a href="contact-ar.html" class="scard-btn">طلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-2">
+          <i class="fas fa-headset"></i>
+          <h3>الدعم الفني والتقني</h3>
+          <p>مكتب خدمة وصيانة مخصص على مدار الـ 24 ساعة، لتقليل أعطال العمليات لأقل حد ممكن.</p>
+          <a href="contact-ar.html" class="scard-btn">طلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/posexpert.png" alt="بوس إكسبيرت" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+          <p>تحويل الأعمال في المملكة العربية السعودية من خلال الحلول الرقمية، وتطبيق أنظمة ERP، وهندسة تكنولوجيا المعلومات.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index-ar.html">الرئيسية</a></li>
+            <li><a href="about-ar.html">من نحن</a></li>
+            <li><a href="services-ar.html">خدماتنا</a></li>
+            <li><a href="portfolio-ar.html">أعمالنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>خدماتنا</h4>
+          <ul>
+            <li><a href="services-ar.html">تطبيق أنظمة ERP</a></li>
+            <li><a href="services-ar.html">حلول نقاط البيع</a></li>
+            <li><a href="services-ar.html">الفوترة الإلكترونية (ZATCA)</a></li>
+            <li><a href="services-ar.html">البنية التحتية لتقنية المعلومات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل بنا</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> الرياض، المملكة العربية السعودية</a></li>
+            <li><a href="mailto:info@posexpertech.com"><i class="fas fa-envelope" style="color: var(--primary-red);"></i> info@posexpertech.com</a></li>
+            <li><a href="tel:+966574165110"><i class="fas fa-phone-alt" style="color: var(--primary-red);"></i> +966 574 165 110</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 شركة بوس إكسبيرت التقنية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/966574165110" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="chatbot-widget" title="الدردشة مع المساعد الذكي"><i class="fas fa-comments"></i></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

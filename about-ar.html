@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" id="htmlEl" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | بوس إكسبيرت التقنية</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .page-header { padding: 160px 0 80px; text-align: center; background: var(--bg-gray); }
+    .page-header h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--primary-blue); }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+    .mv-card { padding: 40px; text-align: center; background: #fff; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 4px solid var(--primary-red); }
+    .mv-card:nth-child(2) { border-bottom-color: var(--primary-blue); }
+    .mv-card i { font-size: 3rem; margin-bottom: 20px; color: var(--primary-red); }
+    .mv-card:nth-child(2) i { color: var(--primary-blue); }
+    
+    .expertise-section { background: var(--bg-dark); color: #fff; }
+    .expertise-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+    .expertise-card { padding: 30px 20px; background: rgba(255,255,255,0.05); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s; }
+    .expertise-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
+    .expertise-card i { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 15px; transition: transform 0.3s; }
+    .expertise-card:hover i { transform: scale(1.1); color: var(--primary-blue); }
+
+    @media (max-width: 900px) {
+      .intro-grid, .mv-grid { grid-template-columns: 1fr; }
+      .expertise-grid { grid-template-columns: 1fr 1fr; }
+      .page-header h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="index-ar.html" class="logo"><img src="assets/images/posexpert.png" alt="بوس إكسبيرت التقنية"></a>
+      <nav class="nav-links">
+        <a href="index-ar.html" class="nav-item">الرئيسية</a>
+        <a href="about-ar.html" class="nav-item active">من نحن</a>
+        <a href="services-ar.html" class="nav-item">خدماتنا</a>
+        <a href="portfolio-ar.html" class="nav-item">أعمالنا</a>
+        <a href="contact-ar.html" class="nav-item">اتصل بنا</a>
+        <button id="langToggle" class="lang-toggle"><i class="fas fa-globe"></i> <span id="langText">English</span></button>
+      </nav>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="animate-fade-in-up">من نحن <span class="text-red">بوس إكسبيرت</span></h1>
+      <p class="animate-fade-in-up stagger-1 text-muted">خبراء متمرسون في التكنولوجيا وأنظمة (ERP) في الرياض</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container intro-grid">
+      <div class="animate-on-scroll">
+        <h2 class="text-blue">أكثر من ١٨ عاماً من التميز الرقمي في السعودية</h2>
+        <p class="text-muted" style="margin-bottom: 20px;">نملك خبرة واسعة تمتد لأكثر من ١٨ عاماً في نقاط البيع (POS) وتخطيط موارد المؤسسات (ERP) ودعم تقنية المعلومات في المملكة العربية السعودية. نفهم تفاصيل وتحديات السوق المحلي وقوانين هيئة الزكاة (ZATCA Phase 2).</p>
+        <p class="text-muted">نحن نؤمن بأهمية الثقة والدعم الراسخ لنضمن لمؤسستك ألا تعتمد تقنيات جديدة فقط، بل تزدهر بفعالية من خلال التحول الرقمي.</p>
+      </div>
+      <div class="animate-on-scroll stagger-2 image-reveal">
+        <div style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+          <img src="assets/images/it_infrastructure.png" alt="IT Infrastructure & Networking" style="width: 100%; display: block; filter: brightness(0.95);">
+          <div style="position: absolute; bottom: 0; right: 0; background: var(--primary-red); color: white; padding: 20px; border-radius: 0 8px 0 0; font-weight: bold; font-family: var(--font-main); box-shadow: 0 -5px 20px rgba(211,47,69,0.3); z-index: 10;">18+ عاماً من الخبرة</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container mv-grid">
+      <div class="mv-card animate-on-scroll">
+        <i class="fas fa-bullseye continuous-float"></i>
+        <h3>مهمتنا</h3>
+        <p class="text-muted">تمكين الشركات السعودية بحلول معلوماتية ذكية وموثوقة لتحسين الكفاءة التشغيلية، وتقديم تجارب أفضل للعملاء، وتعزيز النمو المستدام بشكل يواكب العصر الرقمي.</p>
+      </div>
+      <div class="mv-card animate-on-scroll stagger-2">
+        <i class="fas fa-eye continuous-float" style="animation-delay: 1s;"></i>
+        <h3>رؤيتنا</h3>
+        <p class="text-muted">أن نكون الشريك التقني الأكثر موثوقية في الشرق الأوسط، والمُساهم الأكبر في قيادة التحول نحو بيئة مؤسسية رقمية ومؤتمتة بالكامل.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="expertise-section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>خبراتنا الأساسية</h2>
+        <p>نبني تقنيات وأنظمة متكاملة للأعمال الطموحة.</p>
+      </div>
+      <div class="expertise-grid animate-on-scroll stagger-2">
+        <div class="expertise-card">
+          <i class="fas fa-store"></i>
+          <h4>نقاط البيع لقطاع التجزئة</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">أنظمة نقاط بيع متطورة.</p>
+        </div>
+        <div class="expertise-card">
+          <i class="fas fa-shopping-cart"></i>
+          <h4>أنظمة الاستهلاكيات (FMCG)</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">تتبع متكامل لسلاسل التوريد.</p>
+        </div>
+        <div class="expertise-card">
+          <i class="fas fa-network-wired"></i>
+          <h4>أنظمة ERP</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">أتمتة شاملة باستخدام Odoo.</p>
+        </div>
+        <div class="expertise-card">
+          <i class="fas fa-server"></i>
+          <h4>البنية التحتية</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">إعداد الشبكات بشكل آمن.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/posexpert.png" alt="بوس إكسبيرت" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+          <p>تحويل الأعمال في المملكة العربية السعودية من خلال الحلول الرقمية، وتطبيق أنظمة ERP، وهندسة تكنولوجيا المعلومات.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index-ar.html">الرئيسية</a></li>
+            <li><a href="about-ar.html">من نحن</a></li>
+            <li><a href="services-ar.html">خدماتنا</a></li>
+            <li><a href="portfolio-ar.html">أعمالنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>خدماتنا</h4>
+          <ul>
+            <li><a href="services-ar.html">تطبيق أنظمة ERP</a></li>
+            <li><a href="services-ar.html">حلول نقاط البيع</a></li>
+            <li><a href="services-ar.html">الفوترة الإلكترونية (ZATCA)</a></li>
+            <li><a href="services-ar.html">البنية التحتية لتقنية المعلومات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل بنا</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> الرياض، المملكة العربية السعودية</a></li>
+            <li><a href="mailto:info@posexpertech.com"><i class="fas fa-envelope" style="color: var(--primary-red);"></i> info@posexpertech.com</a></li>
+            <li><a href="tel:+966574165110"><i class="fas fa-phone-alt" style="color: var(--primary-red);"></i> +966 574 165 110</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 شركة بوس إكسبيرت التقنية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/966574165110" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="chatbot-widget" title="الدردشة مع المساعد الذكي"><i class="fas fa-comments"></i></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

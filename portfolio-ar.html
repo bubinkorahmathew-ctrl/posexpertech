@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" id="htmlEl" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أعمالنا | بوس إكسبيرت التقنية</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .page-header { padding: 160px 0 80px; text-align: center; background: var(--bg-gray); }
+    .page-header h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--primary-blue); }
+    
+    .filter-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 50px; }
+    .filter-tab {
+      background: #fff; border: 1px solid #ddd; padding: 10px 24px; border-radius: 30px; cursor: pointer;
+      transition: all 0.3s ease; font-weight: 500; color: var(--text-dark); font-family: var(--font-main);
+    }
+    .filter-tab.active, .filter-tab:hover { background: var(--primary-blue); color: #fff; border-color: var(--primary-blue); box-shadow: 0 4px 10px rgba(47, 93, 154, 0.3); }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+    .portfolio-item {
+      position: relative; border-radius: 8px; overflow: hidden; cursor: pointer; background: var(--bg-dark); height: 280px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .portfolio-img-placeholder {
+      width: 100%; height: 100%; transition: transform 0.5s ease; opacity: 0.8;
+      background: linear-gradient(45deg, var(--bg-gray), #eaeaea);
+    }
+    .portfolio-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(0deg, rgba(11, 15, 26, 0.95) 0%, rgba(11, 15, 26, 0.1) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; transition: all 0.5s ease;
+    }
+    .portfolio-item:hover .portfolio-img-placeholder { transform: scale(1.05); }
+    .portfolio-item:hover .portfolio-overlay { background: rgba(11, 15, 26, 0.9); }
+    .portfolio-item h4 { font-size: 1.5rem; margin-bottom: 5px; color: #fff; transform: translateY(10px); transition: transform 0.3s ease; }
+    .portfolio-item p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 15px; }
+    .view-details { 
+      color: var(--primary-red); font-size: 0.9rem; font-weight: bold; text-transform: uppercase;
+      opacity: 0; transform: translateY(10px); transition: all 0.3s ease; font-family: var(--font-main);
+    }
+    .portfolio-item:hover h4 { transform: translateY(0); }
+    .portfolio-item:hover .view-details { opacity: 1; transform: translateY(0); }
+
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(11, 15, 26, 0.9); backdrop-filter: blur(5px); z-index: 2000;
+      display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-content {
+      background: #fff; border-radius: 8px; width: 90%; max-width: 600px; padding: 40px; position: relative;
+      transform: translateY(50px); transition: all 0.3s ease; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+    .modal-overlay.active .modal-content { transform: translateY(0); }
+    .modal-close { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; transition: color 0.3s; }
+    .modal-close:hover { color: var(--primary-red); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="index-ar.html" class="logo"><img src="assets/images/posexpert.png" alt="بوس إكسبيرت التقنية" style="height: 45px; width: auto;"></a>
+      <nav class="nav-links">
+        <a href="index-ar.html" class="nav-item">الرئيسية</a>
+        <a href="about-ar.html" class="nav-item">من نحن</a>
+        <a href="services-ar.html" class="nav-item">خدماتنا</a>
+        <a href="portfolio-ar.html" class="nav-item active">أعمالنا</a>
+        <a href="contact-ar.html" class="nav-item">اتصل بنا</a>
+        <button id="langToggle" class="lang-toggle"><i class="fas fa-globe"></i> <span id="langText">English</span></button>
+      </nav>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="animate-fade-in-up">جميع <span class="text-red">أعمالنا</span></h1>
+      <p class="animate-fade-in-up stagger-1 text-muted">نعرض حلولاً رقمية وتقنية مؤثرة في جميع أنحاء المملكة.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="filter-tabs animate-on-scroll">
+        <div class="filter-tab active" data-filter="all">جميع المشاريع</div>
+        <div class="filter-tab" data-filter="erp">أنظمة ERP</div>
+        <div class="filter-tab" data-filter="pos">نقاط البيع والتجزئة</div>
+        <div class="filter-tab" data-filter="web">مواقع إلكترونية</div>
+        <div class="filter-tab" data-filter="it">حلول تقنية</div>
+      </div>
+
+      <div class="portfolio-grid">
+        
+        <div class="portfolio-item animate-on-scroll stagger-1" onclick="openModal('الخليج للخدمات اللوجستية', 'نجحنا في نشر أنظمة Odoo لشركة تتبع لوجستية تغطي 4 مدن. تم تحسين سرعة التتبع بنسبة 40% وتقليل النفقات العامة.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #1A365D, #2F5D9A);"></div>
+          <div class="portfolio-overlay">
+            <h4>الخليج للخدمات اللوجستية</h4>
+            <p>تطبيق أنظمة ERP</p>
+            <span class="view-details">عرض التفاصيل <i class="fas fa-arrow-left"></i></span>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate-on-scroll stagger-2" onclick="openModal('مقاهي الواحة', 'تركيب أحدث أنظمة نقاط البيع (POS) مع هندسة قوائم سحابية لشبكة مقاهي سريعة النمو في الرياض.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #A02030, #D32F45);"></div>
+          <div class="portfolio-overlay">
+            <h4>مقاهي الواحة</h4>
+            <p>نقاط البيع (POS)</p>
+            <span class="view-details">عرض التفاصيل <i class="fas fa-arrow-left"></i></span>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate-on-scroll stagger-3" onclick="openModal('تيك سورس للأعمال B2B', 'تطوير بوابة تجارة إلكترونية بين الشركات لموزع إلكترونيات، مع مزامنة مسرد المخزون في الوقت الفعلي.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #2A4365, #3182CE);"></div>
+          <div class="portfolio-overlay">
+            <h4>تيك سورس للأعمال B2B</h4>
+            <p>تطوير المواقع والأنظمة</p>
+            <span class="view-details">عرض التفاصيل <i class="fas fa-arrow-left"></i></span>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate-on-scroll stagger-1" onclick="openModal('شركة الصلب السعودية', 'نقل كامل وإعداد وتجهيز شبكات للخوادم في منشأة مصنعية تضم 500 موظف، مع ضمان عدم تعطل العمل نهائياً.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #1A202C, #0B0F1A);"></div>
+          <div class="portfolio-overlay">
+            <h4>شركة الصلب السعودية</h4>
+            <p>البنية التحتية لتقنية المعلومات</p>
+            <span class="view-details">عرض التفاصيل <i class="fas fa-arrow-left"></i></span>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate-on-scroll stagger-2" onclick="openModal('أفق الأزياء', 'ترقية أكثر من 50 نقطة بيع لتلبية متطلبات هيئة الزكاة (ZATCA) للفوترة الإلكترونية (المرحلة الثانية) بكل سلاسة.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #742A2A, #E53E3E);"></div>
+          <div class="portfolio-overlay">
+            <h4>أفق الأزياء</h4>
+            <p>حلول الفوترة (ZATCA)</p>
+            <span class="view-details">عرض التفاصيل <i class="fas fa-arrow-left"></i></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Modal -->
+  <div class="modal-overlay" id="caseModal">
+    <div class="modal-content">
+      <i class="fas fa-times modal-close" onclick="closeModal()"></i>
+      <h2 id="modalTitle" class="text-blue" style="margin-bottom: 20px;">عنوان المشروع</h2>
+      <p id="modalDesc" style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;"></p>
+      <div style="margin-top: 30px;">
+        <button class="btn btn-primary" onclick="closeModal()">إغلاق التفاصيل</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, desc) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('caseModal').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('caseModal').classList.remove('active');
+    }
+    
+    const tabs = document.querySelectorAll('.filter-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/posexpert.png" alt="بوس إكسبيرت" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+          <p>تحويل الأعمال في المملكة العربية السعودية من خلال الحلول الرقمية، وتطبيق أنظمة ERP، وهندسة تكنولوجيا المعلومات.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index-ar.html">الرئيسية</a></li>
+            <li><a href="about-ar.html">من نحن</a></li>
+            <li><a href="services-ar.html">خدماتنا</a></li>
+            <li><a href="portfolio-ar.html">أعمالنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>خدماتنا</h4>
+          <ul>
+            <li><a href="services-ar.html">تطبيق أنظمة ERP</a></li>
+            <li><a href="services-ar.html">حلول نقاط البيع</a></li>
+            <li><a href="services-ar.html">الفوترة الإلكترونية (ZATCA)</a></li>
+            <li><a href="services-ar.html">البنية التحتية لتقنية المعلومات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل بنا</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> الرياض، المملكة العربية السعودية</a></li>
+            <li><a href="mailto:info@posexpertech.com"><i class="fas fa-envelope" style="color: var(--primary-red);"></i> info@posexpertech.com</a></li>
+            <li><a href="tel:+966574165110"><i class="fas fa-phone-alt" style="color: var(--primary-red);"></i> +966 574 165 110</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 شركة بوس إكسبيرت التقنية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/966574165110" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="chatbot-widget" title="الدردشة مع المساعد الذكي"><i class="fas fa-comments"></i></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

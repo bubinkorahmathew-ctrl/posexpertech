@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" id="htmlEl" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا | بوس إكسبيرت التقنية</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .page-header { padding: 160px 0 60px; text-align: center; background: var(--bg-gray); }
+    .page-header h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--primary-blue); }
+    
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+    
+    .form-container { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+    .input-grp { margin-bottom: 25px; }
+    .input-grp label { display: block; margin-bottom: 8px; font-weight: 600; font-family: var(--font-main); color: var(--text-dark); font-size: 0.9rem; }
+    .input-grp input, .input-grp textarea {
+      width: 100%; padding: 15px; border-radius: 6px; border: 1px solid #ddd; background: #fff;
+      font-family: var(--font-secondary); transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .input-grp input:focus, .input-grp textarea:focus {
+      outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(47, 93, 154, 0.1);
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 30px; }
+    .info-card { display: flex; align-items: flex-start; gap: 20px; padding: 30px; background: #fff; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border-right: 4px solid var(--primary-blue); border-left: none; }
+    .info-card i { font-size: 2rem; color: var(--primary-red); }
+    .info-card h3 { font-size: 1.3rem; margin-bottom: 5px; }
+    
+    .map-container { margin-top: 30px; height: 300px; border-radius: 8px; overflow: hidden; border: 1px solid #eaeaea; }
+    .map-container iframe { width: 100%; height: 100%; border: none; }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="index-ar.html" class="logo"><img src="assets/images/posexpert.png" alt="بوس إكسبيرت التقنية" style="height: 45px; width: auto;"></a>
+      <nav class="nav-links">
+        <a href="index-ar.html" class="nav-item">الرئيسية</a>
+        <a href="about-ar.html" class="nav-item">من نحن</a>
+        <a href="services-ar.html" class="nav-item">خدماتنا</a>
+        <a href="portfolio-ar.html" class="nav-item">أعمالنا</a>
+        <a href="contact-ar.html" class="nav-item active">اتصل بنا</a>
+        <button id="langToggle" class="lang-toggle"><i class="fas fa-globe"></i> <span id="langText">English</span></button>
+      </nav>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="animate-fade-in-up">ابق على <span class="text-red">تواصل</span></h1>
+      <p class="animate-fade-in-up stagger-1 text-muted">هل أنت مستعد لتطوير أعمالك؟ تواصل معنا اليوم.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container contact-grid">
+      
+      <!-- Contact Form -->
+      <div class="form-container animate-on-scroll">
+        <h2 style="margin-bottom: 30px; color: var(--primary-blue);">أرسل رسالة</h2>
+        <form onsubmit="event.preventDefault(); alert('تم إرسال الرسالة بنجاح إلى روبوت المحادثة لحفظ البيانات!');">
+          <div class="input-grp">
+            <label>الاسم الكامل</label>
+            <input type="text" placeholder="الاسم الكامل" required>
+          </div>
+          <div class="input-grp">
+            <label>البريد الإلكتروني</label>
+            <input type="email" placeholder="بريدك الإلكتروني" required>
+          </div>
+          <div class="input-grp">
+            <label>الهاتف / واتساب</label>
+            <input type="tel" placeholder="+966" required>
+          </div>
+          <div class="input-grp">
+            <label>الرسالة</label>
+            <textarea rows="4" placeholder="كيف يمكننا مساعدة أعمالك؟" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">إرسال الاستفسار</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info animate-on-scroll stagger-2">
+        <div class="info-card hover-float">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>موقعنا</h3>
+            <p class="text-muted">طريق الملك فهد، الرياض <br> المملكة العربية السعودية</p>
+          </div>
+        </div>
+        
+        <div class="info-card hover-float" style="border-right-color: var(--primary-red);">
+          <i class="fas fa-envelope" style="color: var(--primary-blue);"></i>
+          <div>
+            <h3>راسلنا</h3>
+            <p class="text-muted">info@posexpertech.com</p>
+          </div>
+        </div>
+
+        <div class="info-card hover-float">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <h3>اتصل بنا</h3>
+            <p class="text-muted">+966 574 165 110</p>
+          </div>
+        </div>
+
+        <div class="map-container hover-float">
+          <!-- Google Map embed placeholder for Riyadh -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231924.96593414952!2d46.5422891968565!3d24.646961448889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1689363012345!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/posexpert.png" alt="بوس إكسبيرت" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+          <p>تحويل الأعمال في المملكة العربية السعودية من خلال الحلول الرقمية، وتطبيق أنظمة ERP، وهندسة تكنولوجيا المعلومات.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index-ar.html">الرئيسية</a></li>
+            <li><a href="about-ar.html">من نحن</a></li>
+            <li><a href="services-ar.html">خدماتنا</a></li>
+            <li><a href="portfolio-ar.html">أعمالنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>خدماتنا</h4>
+          <ul>
+            <li><a href="services-ar.html">تطبيق أنظمة ERP</a></li>
+            <li><a href="services-ar.html">حلول نقاط البيع</a></li>
+            <li><a href="services-ar.html">الفوترة الإلكترونية (ZATCA)</a></li>
+            <li><a href="services-ar.html">البنية التحتية لتقنية المعلومات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>اتصل بنا</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> الرياض، المملكة العربية السعودية</a></li>
+            <li><a href="mailto:info@posexpertech.com"><i class="fas fa-envelope" style="color: var(--primary-red);"></i> info@posexpertech.com</a></li>
+            <li><a href="tel:+966574165110"><i class="fas fa-phone-alt" style="color: var(--primary-red);"></i> +966 574 165 110</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 شركة بوس إكسبيرت التقنية. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/966574165110" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="chatbot-widget" title="الدردشة مع المساعد الذكي"><i class="fas fa-comments"></i></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

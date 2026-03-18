@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlEl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | POSEXPERT Technologies</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .page-header { padding: 160px 0 80px; text-align: center; background: var(--bg-gray); }
+    .page-header h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--primary-blue); }
+    
+    .filter-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 50px; }
+    .filter-tab {
+      background: #fff; border: 1px solid #ddd; padding: 10px 24px; border-radius: 30px; cursor: pointer;
+      transition: all 0.3s ease; font-weight: 500; color: var(--text-dark); font-family: var(--font-main);
+    }
+    .filter-tab.active, .filter-tab:hover { background: var(--primary-blue); color: #fff; border-color: var(--primary-blue); box-shadow: 0 4px 10px rgba(47, 93, 154, 0.3); }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
+    .portfolio-item {
+      position: relative; border-radius: 8px; overflow: hidden; cursor: pointer; background: var(--bg-dark); height: 280px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .portfolio-img-placeholder {
+      width: 100%; height: 100%; transition: transform 0.5s ease; opacity: 0.8;
+      background: linear-gradient(45deg, var(--bg-gray), #eaeaea);
+    }
+    .portfolio-overlay {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(0deg, rgba(11, 15, 26, 0.95) 0%, rgba(11, 15, 26, 0.1) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; transition: all 0.5s ease;
+    }
+    .portfolio-item:hover .portfolio-img-placeholder { transform: scale(1.05); }
+    .portfolio-item:hover .portfolio-overlay { background: rgba(11, 15, 26, 0.9); }
+    .portfolio-item h4 { font-size: 1.5rem; margin-bottom: 5px; color: #fff; transform: translateY(10px); transition: transform 0.3s ease; }
+    .portfolio-item p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 15px; }
+    .view-details { 
+      color: var(--primary-red); font-size: 0.9rem; font-weight: bold; text-transform: uppercase;
+      opacity: 0; transform: translateY(10px); transition: all 0.3s ease; font-family: var(--font-main);
+    }
+    .portfolio-item:hover h4 { transform: translateY(0); }
+    .portfolio-item:hover .view-details { opacity: 1; transform: translateY(0); }
+
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(11, 15, 26, 0.9); backdrop-filter: blur(5px); z-index: 2000;
+      display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+    }
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .modal-content {
+      background: #fff; border-radius: 8px; width: 90%; max-width: 600px; padding: 40px; position: relative;
+      transform: translateY(50px); transition: all 0.3s ease; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+    .modal-overlay.active .modal-content { transform: translateY(0); }
+    .modal-close { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; transition: color 0.3s; }
+    .modal-close:hover { color: var(--primary-red); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo"><img src="assets/images/posexpert.png" alt="POSEXPERT Technologies"></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About Us</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="portfolio.html" class="nav-item active">Portfolio</a>
+        <a href="contact.html" class="nav-item">Contact Us</a>
+        <button id="langToggle" class="lang-toggle"><i class="fas fa-globe"></i> <span id="langText">عربي</span></button>
+      </nav>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="animate-fade-in-up">Our <span class="text-red">Portfolio</span></h1>
+      <p class="animate-fade-in-up stagger-1 text-muted">Showcasing impactful digital solutions across Saudi Arabia.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="filter-tabs animate-on-scroll">
+        <div class="filter-tab active" data-filter="all">All Projects</div>
+        <div class="filter-tab" data-filter="erp">ERP Systems</div>
+        <div class="filter-tab" data-filter="pos">POS & Retail</div>
+        <div class="filter-tab" data-filter="web">Websites</div>
+        <div class="filter-tab" data-filter="it">IT Solutions</div>
+      </div>
+
+      <div class="portfolio-grid">
+        
+        <div class="portfolio-item animate-on-scroll stagger-1" onclick="openModal('Al-Khaleej Logistics', 'Successfully deployed Odoo for a logistics tracking firm spanning 4 cities. Improved tracking speed by 40% and reduced overheads.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #1A365D, #2F5D9A);"></div>
+          <div class="portfolio-overlay">
+            <h4>Al-Khaleej Logistics</h4>
+            <p>ERP Implementation</p>
+            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate-on-scroll stagger-2" onclick="openModal('Oasis Cafés', 'Installed state-of-the-art POS with integrated cloud menu engineering for a rapidly expanding café chain in Riyadh.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #A02030, #D32F45);"></div>
+          <div class="portfolio-overlay">
+            <h4>Oasis Cafés</h4>
+            <p>POS & Menu Engineering</p>
+            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate-on-scroll stagger-3" onclick="openModal('TechSource B2B', 'Developed a high-converting B2B eCommerce portal for an electronics distributor with real-time API inventory sync.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #2A4365, #3182CE);"></div>
+          <div class="portfolio-overlay">
+            <h4>TechSource B2B</h4>
+            <p>Web Development</p>
+            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate-on-scroll stagger-1" onclick="openModal('Saudi Steel Corp', 'Complete server relocation and networking setup for a 500-employee manufacturing facility, ensuring zero downtime.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #1A202C, #0B0F1A);"></div>
+          <div class="portfolio-overlay">
+            <h4>Saudi Steel Corp</h4>
+            <p>IT Infrastructure</p>
+            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="portfolio-item animate-on-scroll stagger-2" onclick="openModal('Fashion Horizon', 'Upgraded 50+ retail counters to meet ZATCA Phase 2 E-invoicing requirements seamlessly.')">
+          <div class="portfolio-img-placeholder" style="background: linear-gradient(45deg, #742A2A, #E53E3E);"></div>
+          <div class="portfolio-overlay">
+            <h4>Fashion Horizon</h4>
+            <p>ZATCA Billing Solutions</p>
+            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study Modal -->
+  <div class="modal-overlay" id="caseModal">
+    <div class="modal-content">
+      <i class="fas fa-times modal-close" onclick="closeModal()"></i>
+      <h2 id="modalTitle" class="text-blue" style="margin-bottom: 20px;">Project Title</h2>
+      <p id="modalDesc" style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;"></p>
+      <div style="margin-top: 30px;">
+        <button class="btn btn-primary" onclick="closeModal()">Close Details</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(title, desc) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('caseModal').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('caseModal').classList.remove('active');
+    }
+    
+    const tabs = document.querySelectorAll('.filter-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/posexpert.png" alt="POSEXPERT" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+          <p>Transforming businesses in Saudi Arabia with smart digital solutions, ERP implementations, and structured IT support.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">ERP Implementation</a></li>
+            <li><a href="services.html">POS Solutions</a></li>
+            <li><a href="services.html">ZATCA Billing</a></li>
+            <li><a href="services.html">IT Infrastructure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Riyadh, Saudi Arabia</a></li>
+            <li><a href="mailto:info@posexpertech.com"><i class="fas fa-envelope" style="color: var(--primary-red);"></i> info@posexpertech.com</a></li>
+            <li><a href="tel:+966574165110"><i class="fas fa-phone-alt" style="color: var(--primary-red);"></i> +966 574 165 110</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 POSEXPERT Technologies. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/966574165110" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="chatbot-widget" title="Chat with AI Assistant"><i class="fas fa-comments"></i></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | POSEXPERT</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <a href="index.html" class="admin-logo">
+      <img src="assets/images/posexpert.png" style="filter: brightness(0); height: 30px;" alt="POSEXPERT">
+      Admin
+    </a>
+    
+    <ul class="admin-nav">
+      <li><a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard Overview</a></li>
+      <li><a href="#"><i class="fas fa-envelope"></i> Inquiries & Messages</a></li>
+      <li><a href="#"><i class="fas fa-project-diagram"></i> Portfolio Manager</a></li>
+      <li><a href="#"><i class="fas fa-cogs"></i> Services Settings</a></li>
+      <li><a href="#"><i class="fas fa-users"></i> User Access</a></li>
+    </ul>
+
+    <div class="admin-logout">
+      <a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    
+    <div class="admin-topbar">
+      <div class="admin-topbar-col">
+        <h1 class="admin-page-title" style="margin: 0; font-size: 1.5rem;">Dashboard</h1>
+      </div>
+      
+      <div class="admin-topbar-col">
+        <div class="admin-search">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search inquiries...">
+        </div>
+        <div class="admin-notifications">
+          <i class="far fa-bell"></i>
+        </div>
+        <div class="admin-user-profile">
+          <div class="admin-avatar">AD</div>
+          <div style="display: flex; flex-direction: column;">
+            <span style="font-weight: 700; font-size: 0.9rem;">Administrator</span>
+            <span style="color: var(--admin-text-muted); font-size: 0.8rem;">Super Admin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h1 class="admin-page-title">Welcome back, Admin!</h1>
+    <p class="admin-subtitle">Here is the latest snapshot of your website traffic and inquiries.</p>
+
+    <!-- Stats Grid -->
+    <div class="admin-stats-grid">
+      <div class="admin-stat-card">
+        <div class="admin-stat-icon"><i class="fas fa-globe"></i></div>
+        <div>
+          <h4>Total Visitors</h4>
+          <p class="val">14,302</p>
+        </div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="admin-stat-icon"><i class="fas fa-envelope-open-text"></i></div>
+        <div>
+          <h4>New Inquiries</h4>
+          <p class="val">23</p>
+        </div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="admin-stat-icon"><i class="fas fa-briefcase"></i></div>
+        <div>
+          <h4>Active Services</h4>
+          <p class="val">8</p>
+        </div>
+      </div>
+      <div class="admin-stat-card">
+        <div class="admin-stat-icon" style="background: rgba(43, 54, 116, 0.1); color: var(--admin-text-dark);"><i class="fas fa-eye"></i></div>
+        <div>
+          <h4>Page Views</h4>
+          <p class="val">49,201</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tables -->
+    <div class="admin-table-widget">
+      <h3>Recent Contact Form Inquiries</h3>
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Service Interest</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mohammed Al-Rashid</td>
+            <td style="color: var(--admin-text-muted);">mohammed@techb2b.sa</td>
+            <td>ERP Implementation</td>
+            <td style="color: var(--admin-text-muted);">Today, 10:45 AM</td>
+            <td><span class="status-badge new">New</span></td>
+            <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+          </tr>
+          <tr>
+            <td>Sara Khalid</td>
+            <td style="color: var(--admin-text-muted);">sara.k@retailco.com</td>
+            <td>ZATCA Phase 2 Billing</td>
+            <td style="color: var(--admin-text-muted);">Yesterday, 04:20 PM</td>
+            <td><span class="status-badge pending">Pending Reply</span></td>
+            <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+          </tr>
+          <tr>
+            <td>Ahmad Ibrahim</td>
+            <td style="color: var(--admin-text-muted);">ahmad.i@logistics.net</td>
+            <td>IT Infrastructure Setup</td>
+            <td style="color: var(--admin-text-muted);">Oct 12, 2026</td>
+            <td><span class="status-badge resolved">Resolved</span></td>
+            <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+          </tr>
+          <tr>
+            <td>Omar Fayed</td>
+            <td style="color: var(--admin-text-muted);">omar@cafe-chain.sa</td>
+            <td>POS System Installation</td>
+            <td style="color: var(--admin-text-muted);">Oct 10, 2026</td>
+            <td><span class="status-badge resolved">Resolved</span></td>
+            <td><button class="action-btn"><i class="fas fa-ellipsis-h"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

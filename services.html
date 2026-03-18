@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlEl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | POSEXPERT Technologies</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .page-header { padding: 160px 0 80px; text-align: center; background: var(--bg-gray); }
+    .page-header h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--primary-blue); }
+    .services-full-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    
+    .scard {
+      padding: 40px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: flex-start;
+      background: #fff; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); border: 1px solid #eee;
+      border-top: 3px solid transparent; transition: all 0.4s ease;
+    }
+    .scard:hover { border-top: 3px solid var(--primary-blue); transform: translateY(-8px); box-shadow: 0 15px 35px rgba(47, 93, 154, 0.1); }
+    .scard:nth-child(even):hover { border-top: 3px solid var(--primary-red); box-shadow: 0 15px 35px rgba(211, 47, 69, 0.1); }
+    
+    .scard i { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 25px; transition: transform 0.3s ease; }
+    .scard:nth-child(even) i { color: var(--primary-red); }
+    .scard:hover i { transform: scale(1.1); }
+    
+    .scard h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-dark); }
+    .scard p { color: var(--text-muted); margin-bottom: 25px; flex-grow: 1; }
+    
+    .scard-btn {
+      color: var(--primary-blue); font-weight: 600; font-family: var(--font-main); font-size: 0.95rem;
+      display: inline-flex; align-items: center; gap: 8px; text-transform: uppercase;
+      padding: 10px 20px; border: 1px solid var(--primary-blue); border-radius: 4px; transition: all 0.3s;
+    }
+    .scard:nth-child(even) .scard-btn { color: var(--primary-red); border-color: var(--primary-red); }
+    .scard-btn:hover { background: var(--primary-blue); color: #fff; }
+    .scard:nth-child(even) .scard-btn:hover { background: var(--primary-red); color: #fff; }
+    
+    [dir="rtl"] .scard { align-items: flex-end; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo"><img src="assets/images/posexpert.png" alt="POSEXPERT Technologies"></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About Us</a>
+        <a href="services.html" class="nav-item active">Services</a>
+        <a href="portfolio.html" class="nav-item">Portfolio</a>
+        <a href="contact.html" class="nav-item">Contact Us</a>
+        <button id="langToggle" class="lang-toggle"><i class="fas fa-globe"></i> <span id="langText">عربي</span></button>
+      </nav>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="animate-fade-in-up">Our <span class="text-red">Services</span></h1>
+      <p class="animate-fade-in-up stagger-1 text-muted">End-to-End Digital Transformation and IT Solutions</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="services-full-grid">
+        
+        <div class="scard animate-on-scroll stagger-1">
+          <i class="fas fa-network-wired"></i>
+          <h3>ERP Implementation</h3>
+          <p>Odoo & ERPNext deployment mapped directly to your business automation workflows.</p>
+          <a href="contact.html" class="scard-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-2">
+          <i class="fas fa-cash-register"></i>
+          <h3>POS Installation</h3>
+          <p>Hardware setup, software configuration, and expert menu engineering for restaurants & retail.</p>
+          <a href="contact.html" class="scard-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-3">
+          <i class="fas fa-boxes"></i>
+          <h3>Inventory Management</h3>
+          <p>Real-time stock tracking, automated reordering, and multi-warehouse synchronization tools to prevent stockouts.</p>
+          <a href="contact.html" class="scard-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-1">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <h3>ZATCA Billing</h3>
+          <p>Phase 2 Saudi compliant e-invoicing integrated perfectly into your existing infrastructure.</p>
+          <a href="contact.html" class="scard-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-2">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Website Development</h3>
+          <p>High-performance business websites and scalable eCommerce stores focusing on lead conversion.</p>
+          <a href="contact.html" class="scard-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-3">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Mobile Apps</h3>
+          <p>Intuitive Android & iOS applications customized for your operational and customer-facing needs.</p>
+          <a href="contact.html" class="scard-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-1">
+          <i class="fas fa-server"></i>
+          <h3>IT Infrastructure</h3>
+          <p>Complete environment structuring, scalable servers, networking setups, and reliable hardware rollouts.</p>
+          <a href="contact.html" class="scard-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="scard animate-on-scroll stagger-2">
+          <i class="fas fa-headset"></i>
+          <h3>IT Support</h3>
+          <p>SME-focused 24/7 dedicated helpdesk and maintenance services ensuring minimal operational downtime.</p>
+          <a href="contact.html" class="scard-btn">Request Quote <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/posexpert.png" alt="POSEXPERT" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+          <p>Transforming businesses in Saudi Arabia with smart digital solutions, ERP implementations, and structured IT support.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">ERP Implementation</a></li>
+            <li><a href="services.html">POS Solutions</a></li>
+            <li><a href="services.html">ZATCA Billing</a></li>
+            <li><a href="services.html">IT Infrastructure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Riyadh, Saudi Arabia</a></li>
+            <li><a href="mailto:info@posexpertech.com"><i class="fas fa-envelope" style="color: var(--primary-red);"></i> info@posexpertech.com</a></li>
+            <li><a href="tel:+966574165110"><i class="fas fa-phone-alt" style="color: var(--primary-red);"></i> +966 574 165 110</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 POSEXPERT Technologies. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/966574165110" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="chatbot-widget" title="Chat with AI Assistant"><i class="fas fa-comments"></i></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

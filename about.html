@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlEl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | POSEXPERT Technologies</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=Tajawal:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .page-header { padding: 160px 0 80px; text-align: center; background: var(--bg-gray); }
+    .page-header h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--primary-blue); }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+    .mv-card { padding: 40px; text-align: center; background: #fff; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-bottom: 4px solid var(--primary-red); }
+    .mv-card:nth-child(2) { border-bottom-color: var(--primary-blue); }
+    .mv-card i { font-size: 3rem; margin-bottom: 20px; color: var(--primary-red); }
+    .mv-card:nth-child(2) i { color: var(--primary-blue); }
+    
+    .expertise-section { background: var(--bg-dark); color: #fff; }
+    .expertise-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+    .expertise-card { padding: 30px 20px; background: rgba(255,255,255,0.05); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s; }
+    .expertise-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
+    .expertise-card i { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 15px; transition: transform 0.3s; }
+    .expertise-card:hover i { transform: scale(1.1); color: var(--primary-blue); }
+
+    @media (max-width: 900px) {
+      .intro-grid, .mv-grid { grid-template-columns: 1fr; }
+      .expertise-grid { grid-template-columns: 1fr 1fr; }
+      .page-header h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo"><img src="assets/images/posexpert.png" alt="POSEXPERT Technologies"></a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item active">About Us</a>
+        <a href="services.html" class="nav-item">Services</a>
+        <a href="portfolio.html" class="nav-item">Portfolio</a>
+        <a href="contact.html" class="nav-item">Contact Us</a>
+        <button id="langToggle" class="lang-toggle"><i class="fas fa-globe"></i> <span id="langText">عربي</span></button>
+      </nav>
+      <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="animate-fade-in-up">About <span class="text-red">POSEXPERT</span></h1>
+      <p class="animate-fade-in-up stagger-1 text-muted">IT Consulting & ERP Experts Based in Riyadh</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container intro-grid">
+      <div class="animate-on-scroll">
+        <h2 class="text-blue">18+ Years of IT Excellence in Saudi Arabia</h2>
+        <p class="text-muted" style="margin-bottom: 20px;">With over 18 years of specialized experience in POS, ERP, and comprehensive IT Support across the Kingdom of Saudi Arabia, we understand the nuances of local market regulations, including ZATCA Phase 2 compliance, and the unique challenges faced by SMEs.</p>
+        <p class="text-muted">Our approach combines state-of-the-art technology with structured, reliable support, ensuring that your business not only adopts new tools but thrives through digital transformation.</p>
+      </div>
+      <div class="animate-on-scroll stagger-2 image-reveal">
+        <div style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+          <img src="assets/images/it_infrastructure.png" alt="IT Infrastructure & Networking" style="width: 100%; display: block; filter: brightness(0.95);">
+          <div style="position: absolute; bottom: 0; right: 0; background: var(--primary-red); color: white; padding: 20px; border-radius: 8px 0 0 0; font-weight: bold; font-family: var(--font-main); box-shadow: 0 -5px 20px rgba(211,47,69,0.3); z-index: 10;">18+ Years Experience</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container mv-grid">
+      <div class="mv-card animate-on-scroll">
+        <i class="fas fa-bullseye continuous-float"></i>
+        <h3>Our Mission</h3>
+        <p class="text-muted">To empower Saudi businesses with smart, scalable, and structured IT solutions that streamline operations, enhance customer experiences, and drive sustainable growth in the digital era.</p>
+      </div>
+      <div class="mv-card animate-on-scroll stagger-2">
+        <i class="fas fa-eye continuous-float" style="animation-delay: 1s;"></i>
+        <h3>Our Vision</h3>
+        <p class="text-muted">To be the most reliable and trusted technology partner in the Middle East, leading the transition toward a fully connected, automated enterprise landscape.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="expertise-section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Our Core Expertise</h2>
+        <p>Building robust ecosystems for ambitious businesses.</p>
+      </div>
+      <div class="expertise-grid animate-on-scroll stagger-2">
+        <div class="expertise-card">
+          <i class="fas fa-store"></i>
+          <h4>Retail POS</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Modern point of sale solutions.</p>
+        </div>
+        <div class="expertise-card">
+          <i class="fas fa-shopping-cart"></i>
+          <h4>FMCG Systems</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Complete supply chain tracking.</p>
+        </div>
+        <div class="expertise-card">
+          <i class="fas fa-network-wired"></i>
+          <h4>ERP Implementations</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Odoo & ERPNext automation.</p>
+        </div>
+        <div class="expertise-card">
+          <i class="fas fa-server"></i>
+          <h4>IT Infrastructure</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Secure networking operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/posexpert.png" alt="POSEXPERT" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+          <p>Transforming businesses in Saudi Arabia with smart digital solutions, ERP implementations, and structured IT support.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">ERP Implementation</a></li>
+            <li><a href="services.html">POS Solutions</a></li>
+            <li><a href="services.html">ZATCA Billing</a></li>
+            <li><a href="services.html">IT Infrastructure</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt" style="color: var(--primary-red);"></i> Riyadh, Saudi Arabia</a></li>
+            <li><a href="mailto:info@posexpertech.com"><i class="fas fa-envelope" style="color: var(--primary-red);"></i> info@posexpertech.com</a></li>
+            <li><a href="tel:+966574165110"><i class="fas fa-phone-alt" style="color: var(--primary-red);"></i> +966 574 165 110</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 POSEXPERT Technologies. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/966574165110" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="chatbot-widget" title="Chat with AI Assistant"><i class="fas fa-comments"></i></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
